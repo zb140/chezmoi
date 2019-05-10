@@ -51,7 +51,6 @@ Manage your dotfiles securely across multiple machines.
 * [Templates variables](#templates-variables)
 * [Template functions](#template-functions)
   * [`bitwarden` [*args*]](#bitwarden-args)
-  * [`keyring` *service* *user*](#keyring-service-user)
   * [`lastpass` *id*](#lastpass-id)
   * [`onepassword` *uuid*](#onepassword-uuid)
   * [`pass` *pass-name*](#pass-pass-name)
@@ -527,8 +526,6 @@ To get a full list of available commands run:
 #### `secret` examples
 
     chezmoi secret bitwarden list items
-    chezmoi secret keyring set --service service --user user
-    chezmoi secret keyring get --service service --user user
     chezmoi secret lastpass ls
     chezmoi secret lastpass -- show --format=json id
     chezmoi secret onepassword list items
@@ -659,22 +656,6 @@ invoke `bw` once.
 
     username = {{ (bitwarden "item" "example.com").login.username }}
     password = {{ (bitwarden "item" "example.com").login.password }}
-
-### `keyring` *service* *user*
-
-`keyring` retrieves the password associated with *service* and *user* from the
-user's keyring.
-
-| OS    | Keyring       |
-| ----- | ------------- |
-| macOS | Keychain      |
-| Linux | GNOME Keyring |
-
-#### `keyring` examples
-
-    [github]
-      user = "{{ .github.user }}"
-      token = "{{ keyring "github" .github.user }}"
 
 ### `lastpass` *id*
 

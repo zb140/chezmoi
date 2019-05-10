@@ -46,11 +46,9 @@ system with a single account then you don't need chezmoi. Otherwise, read on...
   choice. chezmoi can retrieve secrets from [1Password](https://1password.com/),
   [Bitwarden](https://bitwarden.com/), [LastPass](https://lastpass.com/),
   [pass](https://www.passwordstore.org/), [Vault](https://www.vaultproject.io/),
-  your Keychain (on macOS), [GNOME
-  Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) (on Linux), or any
-  command-line utility of your choice. You can encrypt individual files with
-  [gpg](https://www.gnupg.org). You can checkout your dotfiles repo on as many
-  machines as you want without revealing any secrets to anyone.
+  or any command-line utility of your choice. You can encrypt individual files
+  with [gpg](https://www.gnupg.org). You can checkout your dotfiles repo on as
+  many machines as you want without revealing any secrets to anyone.
 
 * Transparent: chezmoi includes verbose and dry run modes so you can review
   exactly what changes it will make to your home directory before making them.

@@ -59,7 +59,6 @@ type Config struct {
 	edit          editCmdConfig
 	init          initCmdConfig
 	_import       importCmdConfig
-	keyring       keyringCmdConfig
 	update        updateCmdConfig
 	upgrade       upgradeCmdConfig
 	stdin         io.Reader
