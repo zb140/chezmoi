@@ -100,8 +100,35 @@ func setupPOSIXEnv(env *testscript.Env) error {
 }
 
 func setupWindowsEnv(env *testscript.Env) error {
-	// FIXME
-	return nil
+	binDir := filepath.Join(env.WorkDir, "bin")
+	env.Setenv("EDITOR", filepath.Join(binDir, "editor.cmd"))
+	env.Setenv("HOME", filepath.Join(env.WorkDir, "home", "user"))
+	env.Setenv("USERPROFILE", env.Getenv("HOME"))
+	env.Setenv("PATH", prependDirToPath(binDir, env.Getenv("PATH")))
+	env.Setenv("SHELL", filepath.Join(binDir, "shell.cmd"))
+
+	return vfst.NewBuilder().Build(vfs.NewPathFS(vfs.HostOSFS, env.WorkDir), map[string]interface{}{
+		"/bin": map[string]interface{}{
+			"editor.cmd": &vfst.File{
+				Perm:     0o755,
+				Contents: []byte(`@for %%x in (%*) do echo # edited>>%%x`),
+			},
+
+			"shell.cmd": &vfst.File{
+				Perm:     0o755,
+				Contents: []byte(`echo %CD%>>` + filepath.Join(env.WorkDir, "shell.log")),
+			},
+		},
+		"/home/user": map[string]interface{}{
+			// .gitconfig is populated with a user and email to avoid warnings
+			// from git.
+			".gitconfig": strings.Join([]string{
+				`[user]`,
+				`    name = Username`,
+				`    email = user@home.org`,
+			}, "\n"),
+		},
+	})
 }
 
 func prependDirToPath(dir, path string) string {
