@@ -723,7 +723,7 @@ func (ts *TargetState) addSymlink(targetName string, entries map[string]Entry, p
 	symlink := &Symlink{
 		sourceName: sourceName,
 		targetName: targetName,
-		linkname:   linkname,
+		linkname:   filepath.ToSlash(linkname),
 	}
 	if existingSymlink != nil {
 		if existingSymlink.linkname == symlink.linkname {

@@ -66,7 +66,7 @@ func (s *Symlink) Apply(fs vfs.FS, mutator Mutator, follow bool, applyOptions *A
 	default:
 		return err
 	}
-	return mutator.WriteSymlink(target, targetPath)
+	return mutator.WriteSymlink(filepath.ToSlash(target), targetPath)
 }
 
 // ConcreteValue implements Entry.ConcreteValue.

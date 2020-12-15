@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"path/filepath"
 	"testing"
 
 	"github.com/spf13/cobra"
@@ -360,7 +359,7 @@ func TestAddCommand(t *testing.T) {
 			tests: []vfst.Test{
 				vfst.TestPath("/home/user/.local/share/chezmoi/symlink_foo",
 					vfst.TestModeIsRegular,
-					vfst.TestContentsString(filepath.FromSlash(".dotfiles/foo")),
+					vfst.TestContentsString(".dotfiles/foo"),
 				),
 			},
 		},
