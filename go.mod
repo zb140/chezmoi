@@ -3,8 +3,7 @@ module github.com/twpayne/chezmoi
 go 1.14
 
 require (
-	github.com/Masterminds/semver/v3 v3.1.1 // indirect
-	github.com/Masterminds/sprig/v3 v3.1.0
+	github.com/Masterminds/sprig/v3 v3.2.0
 	github.com/alecthomas/chroma v0.8.2 // indirect
 	github.com/bmatcuk/doublestar v1.3.2 // indirect
 	github.com/bmatcuk/doublestar/v2 v2.0.4
@@ -19,7 +18,6 @@ require (
 	github.com/google/renameio v1.0.0
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/huandu/xstrings v1.3.2 // indirect
-	github.com/imdario/mergo v0.3.11 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.4 // indirect
 	github.com/mitchellh/mapstructure v1.4.0 // indirect
