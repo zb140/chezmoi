@@ -144,7 +144,7 @@ jobs:
       with:
         version: v1.37.1
     - name: ShellCheck
-      uses: ludeeus/action-shellcheck@1.0.0
+      uses: ludeeus/action-shellcheck@1.1.0
       with:
         scandir: ./assets/scripts
     - name: Whitespace
