@@ -28,7 +28,7 @@ require (
 	github.com/mitchellh/copystructure v1.1.1 // indirect
 	github.com/mitchellh/mapstructure v1.4.1 // indirect
 	github.com/muesli/combinator v0.3.0
-	github.com/pelletier/go-toml v1.8.1
+	github.com/pelletier/go-toml v1.9.1
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/rogpeppe/go-internal v1.7.0
 	github.com/rs/zerolog v1.20.0
